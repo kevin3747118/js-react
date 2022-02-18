@@ -1,3 +1,5 @@
+
+
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -42,17 +44,46 @@ function MainContent() {
     return (<h1>I'm learning React!</h1>)
 }
 
-// Challenge: Create your own custom React component!
-// Call it "MainContent", and have it return a simple
-// h1 element that says "I'm learning React!"
+class header extends React.Component {
+    render() {
+        return <h2>I am a Car!</h2>;
+    }
+}
 
-// Afterward, render it below the Navbar (which
-// you can do inside the ReactDOM.render call below)
+const h1 = document.createElement("h1")
+h1.textContent = "I am a Car"
+h1.className = "header"
+// document.getElementById("root").append(h1)
+console.log(h1)
 
-ReactDOM.render(
-    <div>
-        <Navbar />
-        <MainContent />
-    </div>,
-    document.getElementById("root")
-)
+// const element = <h1 className="header"></h1>
+// ReactDOM.render(element, document.getElementById("root"))
+
+// ReactDOM.render(
+//     <div>
+//         <Navbar />
+//         <h1 />
+//     </div>,
+//     document.getElementById("root")
+// )
+
+const navigation = (<nav>
+    <h1>ALZK</h1>
+    <h3>Reasons I love React</h3>
+    <ol>
+        <li>Menu</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ol>
+</nav>)
+
+// ReactDOM.render(
+//     // <div>
+//     //     <h1 className="header">This is JSX</h1>
+//     //     <p>This is a paragraph</p>
+//     // </div>,
+//     navigation,
+//     document.getElementById("root")
+// )
+
+ReactDOM.render(navigation, document.getElementById("root"))
