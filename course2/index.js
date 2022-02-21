@@ -14,13 +14,16 @@ Hints:
  */
 
 import React from "react";
-import reactDom from "react-dom";
+import ReactDom from "react-dom";
 
-const html = (
+const test = (
     <div>
+        <img src="./react-logo.png" style={{
+            width: "40px"}}></img>
         <h1>123</h1>
     </div>
 )
 
-reactDom.render(html, document.getElementById("root"))
+ReactDom.render(test,
+    document.getElementById("root"))
 
