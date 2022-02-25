@@ -13,17 +13,21 @@ function Footer() {
   return (
     <div className='footer'>
       <div className='footer__left'>
-        <p>Album and song details</p>
+        <img className='footer__albumLogo' src='https://img.ltn.com.tw/Upload/ent/page/800/2020/08/25/3271254_3.jpg' alt='' />
+        <div className='footer__songInfo'>
+          <h4>song name</h4>
+          <p>...</p>
+        </div>
       </div>
       <div className='footer__center'>
         <ShuffleIcon className='footer__green' />
         <SkipPreviousIcon className='footer__icon' />
-        <PlayCircleOutlineIcon fontSizt='large' className='footer__green' />
+        <PlayCircleOutlineIcon fontSizt='large' className='footer__icon'/>
         <SkipNextIcon className='footer__icon' />
-        <RepeatIcon className='footer__icon' />
+        <RepeatIcon className='footer__green' />
       </div>
       <div className='footer__right'>
-        <Grid>
+        <Grid container spacing={2}>
           <Grid item>
             <PlaylistPlayIcon />
           </Grid>
