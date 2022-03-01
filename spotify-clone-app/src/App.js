@@ -11,7 +11,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   // const [token, setToken] = useState(null);
-  const [{ user, token, playlists }, dispatch] = useDataLayerValue();
+  const [{ user, token, playlists, discoverWeekly }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -40,16 +40,25 @@ function App() {
       }).catch(err => {
         console.error(err);
       })
+      spotify.getPlaylist('3C64V048fGyQfCjmu9TIGA').then(discoverWeekly => {
+        dispatch({
+          type: 'SET_DISCOVER_WEEKLY',
+          discoverWeekly: discoverWeekly,
+        })
+      }).catch(err => {
+        console.error(err)
+      })
     }
   }, []);
 
   console.log("😡: ", user)
   console.log("😃: ", token)
   console.log("🥺: ", playlists)
+  console.log("🤫: ", discoverWeekly)
 
   return (
     <div className="app">
-      {token ? (<Player spotify={spotify}/>) : (<Login />)}
+      {token ? (<Player spotify={spotify} />) : (<Login />)}
     </div>
   );
 }
